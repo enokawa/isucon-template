@@ -80,3 +80,15 @@ server {
 
 - `/image/` 配下にファイルが存在したらキャッシュして nginx から返す
 - `/image/` 配下にファイルが存在しなかったら `@app` にリクエストを割り振る
+
+## MySQL
+
+### 接続方法
+
+```sh
+mysql -u isucon -pisucon -D isucondition
+```
+
+- `-u`: ユーザー名
+- `-p`: パスワード
+- `-D`: DB 名
