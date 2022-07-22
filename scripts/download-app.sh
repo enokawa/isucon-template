@@ -4,8 +4,7 @@
 
 cd `dirname $0`
 
-read servers < servers.txt
-
+# on /home/isucon/
 files=(
   env.sh
   webapp/NoImage.jpg
@@ -14,11 +13,7 @@ files=(
   webapp/sql 
 )
 
-mkdir webapp
-
 for file in ${files[@]}
 do
-  scp -r ${servers[0]}:/home/isucon/${file} ../webapp/
+  scp -r isucon11-qualify-1:/home/isucon/${file} ../${file}
 done
-
-mv ../webapp/env.sh ../

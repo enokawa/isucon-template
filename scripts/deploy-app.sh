@@ -7,7 +7,9 @@ cd `dirname $0`
 read servers < servers.txt
 
 files=(
+  env.sh
   webapp/python/main.py
+  webapp/sql/0_Schema.sql
 )
 
 for server in ${servers[@]}
