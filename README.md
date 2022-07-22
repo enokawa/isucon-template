@@ -5,7 +5,7 @@ Template repository for ISUCON
 ## ssh_config 設定
 
 ```sh
-$ cat ./ssh/config >> ~/.ssh/config
+$ cat .ssh/config >> ~/.ssh/config
 $ $EDIDOR ~/.ssh/config
 ```
 

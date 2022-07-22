@@ -50,12 +50,12 @@ echo "###################################################"
 
 # Setup isucon user
 
-if test -d /home/isucon/.ssh; then
+if test -f /home/isucon/.ssh/authorized_keys; then
   echo "[skip] isucon user setting up has allready done."
 else
   echo "isucon user has not setting up. Setting.."
-  sudo mkdir /home/isucon/.ssh
-  sudo chmod 700 /home/isucon/.ssh
+  # sudo mkdir /home/isucon/.ssh
+  # sudo chmod 700 /home/isucon/.ssh
   sudo touch /home/isucon/.ssh/authorized_keys
   sudo chmod 600 /home/isucon/.ssh/authorized_keys
   sudo chown -R isucon:isucon /home/isucon/.ssh/
