@@ -7,18 +7,18 @@ cd `dirname $0`
 read servers < servers.txt
 
 files=(
-  home/isucon/env.sh
-  home/isucon/webapp/NoImage.jpg
-  home/isucon/webapp/ec256-public.pem
-  home/isucon/webapp/python
-  home/isucon/webapp/sql 
+  env.sh
+  webapp/NoImage.jpg
+  webapp/ec256-public.pem
+  webapp/python
+  webapp/sql 
 )
 
 mkdir webapp
 
 for file in ${files[@]}
 do
-  scp -r ${servers[0]}:/$file ../webapp/
+  scp -r ${servers[0]}:/home/isucon/${file} ../webapp/
 done
 
 mv ../webapp/env.sh ../
