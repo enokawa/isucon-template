@@ -4,13 +4,12 @@
 
 cd `dirname $0`
 
-read servers < servers.txt
-
 files=(
   etc/mysql/mysql.conf.d/mysqld.cnf
+  # etc/mysql/mariadb.conf.d/50-server.cnf
 )
 
 for file in ${files[@]}
 do
-  scp ${servers[0]}:/${file} ../${file}
+  scp isuconXX-qualify-1:/${file} ../${file}
 done

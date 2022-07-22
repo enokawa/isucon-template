@@ -8,6 +8,7 @@ read servers < servers.txt
 
 files=(
   etc/mysql/mysql.conf.d/mysqld.cnf
+  # etc/mysql/mariadb.conf.d/50-server.cnf
 )
 
 for server in ${servers[@]}
@@ -16,6 +17,7 @@ do
   for file in ${files[@]}
   do
     ssh ${server} mkdir -p etc/mysql/mysql.conf.d
+    # ssh ${server} mkdir -p etc/mysql/mariadb.conf.d
     scp ../${file} ${server}:${file}
 
     ssh ${server} sudo cp ${file} /${file}
