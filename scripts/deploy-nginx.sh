@@ -28,6 +28,7 @@ do
   
   # Restart Nginx service
   ssh ${server} "sudo nginx -t && sudo nginx -s reopen"
+  ssh ${server} "sudo systemctl restart nginx"
   echo "============= ${server} ============="
   echo
 done

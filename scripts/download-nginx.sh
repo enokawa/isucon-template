@@ -4,8 +4,6 @@
 
 cd `dirname $0`
 
-read servers < servers.txt
-
 files=(
   etc/nginx/nginx.conf
   etc/nginx/sites-available/isucon.conf
@@ -13,5 +11,5 @@ files=(
 
 for file in ${files[@]}
 do
-  scp ${servers[0]}:/${file} ../${file}
+  scp isuconXX-qualify-1:/${file} ../${file}
 done

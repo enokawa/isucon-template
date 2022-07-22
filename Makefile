@@ -18,3 +18,8 @@ deploy-mysql:
 
 download-mysql:
 	bash ./scripts/download-mysql.sh
+
+deploy-all:
+	$(MAKE) deploy-app
+	$(MAKE) deploy-nginx
+	$(MAKE) deploy-mysql

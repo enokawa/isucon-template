@@ -92,3 +92,21 @@ mysql -u isucon -pisucon -D isucondition
 - `-u`: ユーザー名
 - `-p`: パスワード
 - `-D`: DB 名
+
+### Slow query ログ出力設定
+
+```
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/mariadb-slow.log
+long_query_time = 0
+```
+
+### INDEX
+
+```SQL
+ALTER TABLE `isu_condition` ADD INDEX `jia_isu_uuid_idx` (jia_isu_uuid);
+
+ALTER TABLE `isu_condition` ADD INDEX `jia_isu_uuid_idx` (jia_isu_uuid, timestamp DESC);
+
+ALTER TABLE `isu_condition` DROP INDEX `jia_isu_uuid_idx`;
+```
