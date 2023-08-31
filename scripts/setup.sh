@@ -2,6 +2,8 @@
 
 set -eu
 
+readonly ALP_VERSION="v1.0.15"
+
 echo "###################################################"
 
 # Ignore login message such as below:
@@ -40,7 +42,7 @@ if test -f /usr/local/bin/alp; then
   echo "[skip] alp has allready installed."
 else
   echo "alp has not installed. Installing..."
-  curl -LO https://github.com/tkuchiki/alp/releases/download/v1.0.10/alp_linux_amd64.tar.gz
+  curl -LO https://github.com/tkuchiki/alp/releases/download/${ALP_VERSION}/alp_linux_amd64.tar.gz
   tar xvzf alp_linux_amd64.tar.gz
   sudo mv alp /usr/local/bin/alp
   rm -f alp_linux_amd64.tar.gz
@@ -54,13 +56,14 @@ if test -f /home/isucon/.ssh/authorized_keys; then
   echo "[skip] isucon user setting up has allready done."
 else
   echo "isucon user has not setting up. Setting.."
-  # sudo mkdir /home/isucon/.ssh
-  # sudo chmod 700 /home/isucon/.ssh
+  sudo mkdir /home/isucon/.ssh
+  sudo chmod 700 /home/isucon/.ssh
   sudo touch /home/isucon/.ssh/authorized_keys
   sudo chmod 600 /home/isucon/.ssh/authorized_keys
   sudo chown -R isucon:isucon /home/isucon/.ssh/
   sudo curl -s https://github.com/enokawa.keys >> /home/isucon/.ssh/authorized_keys
-  sudo curl -s https://github.com/kikulabo.keys >> /home/isucon/.ssh/authorized_keys  
+  sudo curl -s https://github.com/kikulabo.keys >> /home/isucon/.ssh/authorized_keys
+  sudo curl -s https://github.com/mmclsntr.keys >> /home/isucon/.ssh/authorized_keys
 fi
 
 echo "###################################################"
